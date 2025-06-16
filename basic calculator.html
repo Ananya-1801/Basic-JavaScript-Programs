@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <script type="text/javascript">
+    function ans() 
+    {
+      var a = parseFloat(document.f1.n1.value);
+      var b = parseFloat(document.f1.n2.value);
+      var o = document.f1.oper.value;
+      var resultBox = document.getElementById("result");
+
+      if (isNaN(a) || isNaN(b)) 
+      {
+        resultBox.value = "Enter valid numbers";
+        return;
+      }
+
+      switch (o) 
+     {
+        case "add":
+          resultBox.value = a + b;
+          break;
+        case "sub":
+          resultBox.value = a - b;
+          break;
+        case "prod":
+          resultBox.value = a * b;
+          break;
+        case "div":
+          if (b === 0) 
+          {
+            resultBox.value = "Cannot divide by zero";
+          } else 
+          {
+            resultBox.value = a / b;
+          }
+          break;
+        default:
+          resultBox.value = "Select an operation";
+      }
+    }
+  </script>
+</head>
+<body>
+  <center>
+    <h2>Simple JavaScript Calculator</h2>
+    <form name="f1">
+      <table border="1" cellpadding="5">
+        <tr>
+          <td>Enter the first number</td>
+          <td><input type="text" name="n1"></td>
+        </tr>
+        <tr>
+          <td>Enter the second number</td>
+          <td><input type="text" name="n2"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <center>
+              <select name="oper">
+                <option selected disabled>Choose Operation</option>
+                <option value="add">Addition</option>
+                <option value="sub">Subtraction</option>
+                <option value="prod">Multiplication</option>
+                <option value="div">Division</option>
+              </select>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="button" value="Submit" onclick="ans()"></td>
+          <td><input type="reset" value="Reset"></td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td><input type="text" id="result" readonly></td>
+        </tr>
+      </table>
+    </form>
+  </center>
+</body>
+</html>
