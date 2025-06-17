@@ -1,0 +1,65 @@
+
+<HTML>
+    <HEAD>
+        <TITLE> Login </TITLE>
+
+        <SCRIPT language="javascript">
+
+            function validateForm()
+            {
+                var name        = strForm.inName.value;
+                var mail        = strForm.inMail.value;
+                var mailConfirm = strForm.inMailConfirm.value;
+
+                if (name == "") {
+                    alert("Please provide a name!");
+                }
+
+                else if (mail != mailConfirm) {
+                    alert("The e-mail entered is not the same!");
+                }
+
+                else if ((mail.match("@") == "@") && (mail.match("\\.") == ".")) {
+                    alert(name + ", you've been logged in successfully!");
+                }
+
+                else {
+                    alert("The E-mail ID is invalid!");
+                }
+            }
+
+        </SCRIPT>
+    </HEAD>
+
+    <BODY>
+	<center><h1><u> LOGIN </u></h1>
+	<br><br>
+        <FORM name="strForm">
+            <TABLE align="center">
+		<table border="1" cellpadding="3">
+                <TR>
+                    <TD>Enter your name: </TD>
+                    <TD><INPUT type="text" name="inName">
+                </TR>
+
+                <TR>
+                    <TD>Enter your E-mail ID: </TD>
+                    <TD><INPUT type="text" name="inMail">
+                </TR>
+
+                <TR>
+                    <TD>Confirm your E-mail ID: </TD>
+                    <TD><INPUT type="text" name="inMailConfirm">
+                </TR>
+
+                <TR>
+                    <TD><INPUT type="button" value="Login" onclick="validateForm()"></TD>
+                    <TD><INPUT type="reset"></TD>
+                </TR>
+            </TABLE>
+        </FORM>
+	</center>
+    </BODY>
+</HTML>
+
+
