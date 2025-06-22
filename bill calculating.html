@@ -1,0 +1,56 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function discount(){
+      var a, d, b;
+
+      a = parseInt(f1.temp.value);
+      d = f1.dev.value;
+      
+      if (a > 35000){
+        if (d == 'desk'){
+          b = a - 0.10 * a;
+        } else {
+          b = a - 0.15 * a;
+        }
+      } else {
+        b = a;
+      }
+      document.getElementById('disc').value = b;
+    }
+  </script>
+</head>
+<body>
+<center>
+<h1><b><u> BILL CALCULATOR </u></b></h1>
+<table border=0>
+<form name="f1">
+<tr>
+<td>ENTER THE NAME:</td>
+<td><input type="text" name="n1"></td>
+</tr>
+<tr>
+<td>ENTER ADDRESS:</td>
+<td><input type="text" name="n2"></td>
+</tr>
+<tr>
+<td>ENTER AMOUNT:</td>
+<td><input type="text" name="temp"></td>
+</tr>
+<tr>
+<td>Desktop<input type="radio" name="dev" value="desk"></td>
+<td>Laptop<input type="radio" name="dev" value="lap"></td>
+</tr>
+<tr>
+<td>Amount after discount:<input type="text" id="disc"></td>
+</tr>
+<tr>
+<td><input type="button" value="submit" onclick="discount()"></td>
+</tr>
+</form>
+</table>
+<br>
+<p><u>NOTE</u>- If the amount entered is above INR 35000, you get a discount of 10% on Desktop and 15% on choosing a laptop!</p>
+</center>
+</body>
+</html>

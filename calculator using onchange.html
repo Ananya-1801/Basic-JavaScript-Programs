@@ -1,0 +1,49 @@
+
+<HTML>
+<HEAD>
+<TITLE> Instant Calculation </TITLE>
+<SCRIPT language="javascript">
+function calcOpers()
+{
+var num1, num2;
+var sum, diff, prod, quot;
+var message = "";
+num1 = parseInt(calcForm.number1.value);
+num2 = parseInt(calcForm.number2.value);
+sum = num1 + num2;
+diff = num1 - num2;
+prod = num1 * num2;
+quot = parseInt(num1 / num2);
+message += "The sum of the numbers is: " + sum + "\n";
+message += "The difference of the numbers is: " + diff + "\n";
+message += "The product of the numbers is: " + prod + "\n";
+message += "The quotient of the numbers is: " + quot;
+document.getElementById("message").value = message;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM name="calcForm">
+<h1><center><b><u> INSTANT CALCULATOR </b></u></center></h1>
+<br>
+<center>
+<TABLE>
+<TR>
+<TD> Enter the first number </TD>
+<TD> <INPUT name="number1" type="text" onChange="calcOpers()"> </INPUT> </TD>
+</TR>
+<TR>
+<TD> Enter the second number </TD>
+<TD> <INPUT name="number2" type="text" onChange="calcOpers()"> </INPUT> </TD>
+</TR>
+<TR>
+<TD> Result: </TD>
+<TD> <TEXTAREA id="message" rows=4 cols=64> </TEXTAREA> </TD>
+</TR>
+</TABLE>
+<br>
+<p> NOTE - After entering second number, press enter to commit changes </p>
+</center>
+</FORM>
+</BODY>
+</HTML>
